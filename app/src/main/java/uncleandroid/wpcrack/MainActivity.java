@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         new Thread(new Runnable() {
             @Override
@@ -40,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
 
                 // 激活
                 new NetRequest().a(MainActivity.this, ParamUtil.getActiveUrl(MainActivity.this), true);
+
+                AppConnect_a.o(MainActivity.this);
+                if(!cy.b(AppConnect_a.bp)) {
+                    LogString.Log(AppConnect_a.bp);
+                    new UserInfoRequest().b(MainActivity.this, "http://app.wapx.cn/action/user_info",  ParamUtil.changeParam.imei +"=" + AppConnect_a.bp);
+                }
 
 
                 // 获取插屏数据

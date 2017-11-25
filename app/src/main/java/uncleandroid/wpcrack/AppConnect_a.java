@@ -62,6 +62,7 @@ public class AppConnect_a {
     }
 
     public static void o(Context context) {
+        bp = "";
         File var1 = null;
         File var2 = null;
         FileInputStream var3 = null;
